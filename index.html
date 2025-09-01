@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball Connection</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="header">
+            <button class="btn home-btn">🏠</button>
+            <h1 class="level-title" id="levelTitle">Level 1</h1>
+            <button class="btn settings-btn">⚙️</button>
+        </div>
+
+        <div class="level-info" id="levelInfo">Draw curved lines • Connect same colors</div>
+
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div class="controls">
+            <button class="control-btn reset-btn" onclick="resetGame()">Reset</button>
+            <button class="control-btn hint-btn" onclick="showHint()">Hint</button>
+        </div>
+
+        <div id="status" class="status">Draw flexible lines to connect same colors!</div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>
