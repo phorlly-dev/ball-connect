@@ -2,7 +2,7 @@ import Ball from "./ball.js";
 
 const colors = ["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6", "#e67e22"];
 
-const generateRandomLevel = (level, ctx, canvasWidth, canvasHeight) => {
+const generateRandomLevel = (level, ctx, canvas) => {
     const balls = [];
 
     // Difficulty scaling
@@ -20,8 +20,8 @@ const generateRandomLevel = (level, ctx, canvasWidth, canvasHeight) => {
             x,
             y;
         while (!valid && attempts < 300) {
-            x = margin + Math.random() * (canvasWidth - 2 * margin);
-            y = margin + Math.random() * (canvasHeight - 2 * margin);
+            x = margin + Math.random() * (canvas.width - 2 * margin);
+            y = margin + Math.random() * (canvas.height - 2 * margin);
             valid = positions.every((pos) => Math.hypot(x - pos.x, y - pos.y) >= minDistance);
             attempts++;
         }

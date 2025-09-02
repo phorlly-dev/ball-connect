@@ -52,6 +52,7 @@ class Ball {
     isPointInside(x, y) {
         const dx = x - this.x;
         const dy = y - this.y;
+
         return dx * dx + dy * dy <= this.radius * this.radius;
     }
 }

@@ -1,4 +1,4 @@
-import { distanceFromPointToLine, doLinesIntersect } from "./game.js";
+import GameStates from "./game.js";
 
 class FlexiblePath {
     constructor(startBall, color, ctx, balls, paths) {
@@ -58,7 +58,7 @@ class FlexiblePath {
             const p2 = this.points[i + 1];
             for (const ball of this.balls) {
                 if (ball === this.startBall || ball === this.endBall) continue;
-                const distance = distanceFromPointToLine(ball.x, ball.y, p1.x, p1.y, p2.x, p2.y);
+                const distance = GameStates.distanceFromPointToLine(ball.x, ball.y, p1.x, p1.y, p2.x, p2.y);
                 if (distance < ball.radius - 5) return true;
             }
         }
@@ -71,7 +71,7 @@ class FlexiblePath {
             for (let i = 0; i < this.points.length - 1; i++) {
                 for (let j = 0; j < otherPath.points.length - 1; j++) {
                     if (
-                        doLinesIntersect(
+                        GameStates.doLinesIntersect(
                             this.points[i],
                             this.points[i + 1],
                             otherPath.points[j],
